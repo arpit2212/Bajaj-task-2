@@ -151,8 +151,8 @@ const DynamicForm = ({ user, onSubmit, formData, setFormData }: DynamicFormProps
     const isValid = validateSection(currentSectionIndex);
     if (isValid) {
       onSubmit(values);
-      alert("Form submitted Succesfully!");
-      window.location.reload();
+      alert("Form submitted Succesfully, click on okay to redirect to homePage");
+    
     }
   };
 
