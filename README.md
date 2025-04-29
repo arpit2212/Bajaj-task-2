@@ -9,11 +9,13 @@ A React TypeScript application that dynamically renders multi-section forms base
 ## Screenshots
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-  <img src="./public/Screenshot 2025-04-29 135741.png" alt="Project Structure"  />
+    <img src="./public/Screenshot 2025-04-29 135341.png" alt="UI View" />
+    <img src="./public/Screenshot 2025-04-29 135522.png" alt="API Integration"  />
+    <img src="./public/Screenshot 2025-04-29 135615.png" alt="Form Implementation"  />
   <img src="./public/Screenshot 2025-04-29 135641.png" alt="Code View"  />
-  <img src="./public/Screenshot 2025-04-29 135615.png" alt="Form Implementation"  />
-  <img src="./public/Screenshot 2025-04-29 135522.png" alt="API Integration"  />
-  <img src="./public/Screenshot 2025-04-29 135341.png" alt="UI View" />
+
+
+
 </div>
 
 ## Project Overview
