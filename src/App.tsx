@@ -7,24 +7,20 @@ import NavigationBar from './components/NavigationBar';
 function App() {
   const [user, setUser] = useState<User | null>(null);
   const [formData, setFormData] = useState<any>(null);
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
-
+  // Only keep state variables that are actually used in the component
 
   const handleLogin = (loggedInUser: User) => {
     setUser(loggedInUser);
   };
+
   const handleLogout = () => {
     setUser(null);
     setFormData(null);
-    setSubmitSuccess(false);
-    setSubmitError(null);
   };
 
   const handleLoginClick = () => {
-    setShowLoginForm(true);
+    // This function is passed to NavigationBar but doesn't need to modify any state
+    // since we're conditionally rendering based on user state
   };
 
   const handleFormSubmit = (formData: any) => {
@@ -32,25 +28,26 @@ function App() {
   };
 
   return (
-     <div> <NavigationBar 
+    <div>
+      <NavigationBar 
         user={user}
         onLoginClick={handleLoginClick}
         onLogout={handleLogout}
       />
-    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl bg-gray-800 p-6 rounded-lg shadow-xl">
-        {!user ? (
-          <LoginForm onLogin={handleLogin} />
-        ) : (
-          <DynamicForm 
-            user={user} 
-            onSubmit={handleFormSubmit} 
-            formData={formData}
-            setFormData={setFormData}
-          />
-        )}
+      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-4">
+        <div className="w-full max-w-2xl bg-gray-800 p-6 rounded-lg shadow-xl">
+          {!user ? (
+            <LoginForm onLogin={handleLogin} />
+          ) : (
+            <DynamicForm 
+              user={user} 
+              onSubmit={handleFormSubmit} 
+              formData={formData}
+              setFormData={setFormData}
+            />
+          )}
+        </div>
       </div>
-    </div>
     </div> 
   );
 }
